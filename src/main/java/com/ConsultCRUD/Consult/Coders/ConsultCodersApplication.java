@@ -15,7 +15,7 @@ public class ConsultCodersApplication {
 	}
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return String.format("Hello iris!", name);
+		return String.format("Hello javi!", name);
 	}
 }
 
