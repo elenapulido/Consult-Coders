@@ -1,4 +1,4 @@
-package com.ConsultCRUD.Consult.Coders.repository;
+package com.ConsultCRUD.Consult.Coders.Repository;
 
 import com.ConsultCRUD.Consult.Coders.Model.CCoder;
 import org.springframework.data.jpa.repository.JpaRepository;
