@@ -13,9 +13,9 @@ public class ConsultCodersApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ConsultCodersApplication.class, args);
 	}
-	@GetMapping("/hello")
+	@GetMapping("/consultation")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return String.format("Hello javi!", name);
+		return String.format("Hello elena!", name);
 	}
 }
 

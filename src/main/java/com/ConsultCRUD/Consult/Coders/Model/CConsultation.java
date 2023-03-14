@@ -11,7 +11,7 @@ import lombok.*;
 @Setter
 @ToString
 
-public class CCoder {
+public class CConsultation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
