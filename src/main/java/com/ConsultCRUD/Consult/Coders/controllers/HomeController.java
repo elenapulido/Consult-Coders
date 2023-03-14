@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping("")
+     @GetMapping("")
     public String home() {
         return "index";
     }
@@ -20,4 +20,11 @@ public class HomeController {
     public String list() {
         return "list";
     }
+
+    @GetMapping("/edit")
+    public String edit() {
+        return "edit";
+    }
+
 }
+

@@ -3,12 +3,32 @@
 
 
 <head>
-  <meta charset="UTF-8">
-  <link th:href="@{/css/main.css}" rel="stylesheet"/>
-  <title>LIST</title>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <title>LIST</title>
 
 </head>
 <body>
+<div class="list">
+    <div class="panel-list"><h2>LISTADO DE CITAS</h2>
+    </div>
+    <table class="table table-list">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="coder: ${coder}">
+                <td data-th-text="${coder.id}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
 <img th:src="@{/assets/view-02.png}" width="100%"/>
 
