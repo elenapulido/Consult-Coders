@@ -1,4 +1,4 @@
-package com.ConsultCRUD.Consult.Coders.Controller;
+package com.ConsultCRUD.Consult.Coders.Controllers;
 
 import com.ConsultCRUD.Consult.Coders.Model.CConsultation;
 import com.ConsultCRUD.Consult.Coders.Service.CConsultationService;
