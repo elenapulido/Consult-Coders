@@ -11,4 +11,8 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/form")
+    public String form() {
+        return "form";
+    }
 }

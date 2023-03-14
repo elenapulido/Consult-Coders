@@ -12,15 +12,11 @@
     <link th:href="@{/css/main.css}" rel="stylesheet"/>
 </head>
 <body>
-<img th:src="@{/assets/view-01.png}" width="100%" />
+<img th:src="@{/assets/view-01.png}" width="100%"/>
 
 <form>
-
-    <button class="btn btn-success" type="submit">Pedir Cita</button>
-    &nbsp;<a class="btn btn-warning" th:href="@{/cita/mostrar}"></a>
-    <button class="btn btn-success" type="submit">Ver Lista</button>
-    &nbsp;<a class="btn btn-warning" th:href="@{/lista/mostrar}"></a>
-
+    <a class="btn btn-primary" th:href="@{/form}" href="templates/form.html">Pedir Cita</a>
+    <a class="btn btn-success" th:href="@{/cita/mostrar}">Ver Lista</a>
 </form>
-    <a href="view1/homePage.html">homePage.html</a>
+
 </body>

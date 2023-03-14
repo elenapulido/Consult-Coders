@@ -10,6 +10,6 @@ public class Coder {
     private int id;
     private String name;
     private String surname;
-    private String age;
+    private String mail;
 
 }
