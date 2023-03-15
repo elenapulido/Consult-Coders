@@ -27,7 +27,9 @@ public class CConsultationService {
 
 
     }
-    public void updateConsultation(){
+    public void updateConsultation(CConsultation consultation){
+        iRepository.save(consultation);
+
 
     }
 

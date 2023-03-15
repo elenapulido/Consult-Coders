@@ -23,8 +23,15 @@ public class CController {
         cConsultationService.createConsultation(consultation);
 
     }
+    @PutMapping("/consultation")
+    private void updateConsultation(@RequestBody CConsultation consultation){
+        cConsultationService.updateConsultation(consultation);
+
+    }
+
+
     @DeleteMapping("/consultation/{id}")
-    private void deleteConsultation(@PathVariable("id")long id){
+    private void deleteConsultation(@PathVariable("id")Long id){
         cConsultationService.deleteConsultation(id);
 
 
