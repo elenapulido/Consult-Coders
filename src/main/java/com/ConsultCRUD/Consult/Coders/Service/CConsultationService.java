@@ -31,9 +31,11 @@ public class CConsultationService {
 
     }
 
-    public void deleteConsultation(){
+    public void deleteConsultation(Long id){
+        iRepository.deleteById(id);
 
-    }
+
+   }
 
 
     public void setiRepository(IRepository iRepository) {
