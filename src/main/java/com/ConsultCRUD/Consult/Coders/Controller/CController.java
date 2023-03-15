@@ -1,4 +1,4 @@
-package com.ConsultCRUD.Consult.Coders.Controllers;
+package com.ConsultCRUD.Consult.Coders.Controller;
 
 import com.ConsultCRUD.Consult.Coders.Model.CConsultation;
 import com.ConsultCRUD.Consult.Coders.Service.CConsultationService;
@@ -17,7 +17,7 @@ public class CController {
 
     @GetMapping("/consultation")
     private List<CConsultation> readConsultation(){
-        return CConsultationService.readConsultation();
+        return cConsultationService.readConsultation();
 
     }
 

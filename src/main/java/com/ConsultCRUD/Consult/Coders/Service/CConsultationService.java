@@ -12,7 +12,8 @@ import java.util.List;
 @Service
 public class CConsultationService {
     @Autowired
-    IRepository iRepository;
+
+   private IRepository iRepository;
 
     public void createConsultation(CConsultation consultation){
         iRepository.save(consultation);
@@ -20,9 +21,8 @@ public class CConsultationService {
 
     }
 
-    public static List<CConsultation>readConsultation(){
-        List<CConsultation> consultations = new ArrayList<CConsultation>();
-        consultations.addAll(iRepository.findAll());
+    public List<CConsultation>readConsultation(){
+        List<CConsultation> consultations = new ArrayList<CConsultation>(iRepository.findAll());
         return consultations;
 
 
@@ -36,8 +36,7 @@ public class CConsultationService {
     }
 
 
-
-
-
-
+    public void setiRepository(IRepository iRepository) {
+        this.iRepository = iRepository;
+    }
 }
