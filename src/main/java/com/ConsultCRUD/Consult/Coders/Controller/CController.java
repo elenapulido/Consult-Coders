@@ -17,15 +17,20 @@ public class CController {
         return cConsultationService.readConsultation();
 
     }
+    //@GetMapping("/consultation/{id}")
+    //private List<CConsultation> readConsultationId(@PathVariable("id") Long id){
+       // return cConsultationService.readConsultation(id);
+
+   // }
 
     @PostMapping("/consultation")
     private void createConsultation(@RequestBody CConsultation consultation){
         cConsultationService.createConsultation(consultation);
 
     }
-    @PutMapping("/consultation")
-    private void updateConsultation(@RequestBody CConsultation consultation){
-        cConsultationService.updateConsultation(consultation);
+    @PutMapping("/consultation/{id}")
+    private void updateConsultation(@RequestBody CConsultation consultation,@PathVariable("id")Long id){
+        cConsultationService.updateConsultation(consultation,id);
 
     }
 

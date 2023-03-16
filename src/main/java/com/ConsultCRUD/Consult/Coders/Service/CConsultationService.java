@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -25,11 +26,15 @@ public class CConsultationService {
         List<CConsultation> consultations = new ArrayList<CConsultation>(iRepository.findAll());
         return consultations;
 
-
     }
-    public void updateConsultation(CConsultation consultation){
-        iRepository.save(consultation);
+    public String readConsultationId(Long id){
+        CConsultation consultation = iRepository.findById(id);
+        return consultation;
+    }
 
+    public void updateConsultation(CConsultation consultation, Long id){
+        consultation.setId(id);
+        iRepository.save(consultation);
 
     }
 

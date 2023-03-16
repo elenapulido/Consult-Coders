@@ -13,10 +13,20 @@ import lombok.*;
 @Table(name= "consult")
 public class CConsultation {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "id", nullable = false)
     private long id;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Column (name = "name", nullable = false)
     private String name;
     @Column (name = "surname", nullable = false)
@@ -31,4 +41,6 @@ public class CConsultation {
     private String date;
 
 
+
 }
+
