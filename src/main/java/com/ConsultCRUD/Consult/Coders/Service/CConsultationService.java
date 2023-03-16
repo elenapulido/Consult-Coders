@@ -27,8 +27,8 @@ public class CConsultationService {
         return consultations;
 
     }
-    public String readConsultationId(Long id){
-        CConsultation consultation = iRepository.findById(id);
+    public Optional<CConsultation> readConsultationId(Long id){
+        Optional<CConsultation> consultation = iRepository.findById(id);
         return consultation;
     }
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CController {
@@ -17,11 +18,11 @@ public class CController {
         return cConsultationService.readConsultation();
 
     }
-    //@GetMapping("/consultation/{id}")
-    //private List<CConsultation> readConsultationId(@PathVariable("id") Long id){
-       // return cConsultationService.readConsultation(id);
+    @GetMapping("/consultation/{id}")
+    private Optional<CConsultation> readConsultationId(@PathVariable("id") Long id){
+       return cConsultationService.readConsultationId(id);
 
-   // }
+    }
 
     @PostMapping("/consultation")
     private void createConsultation(@RequestBody CConsultation consultation){
