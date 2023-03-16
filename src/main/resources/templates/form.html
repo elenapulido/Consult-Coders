@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="page-header">
+
+        <img th:src="@{/assets/view-01.png}" width="100%"/>
+
         <h1>FORMULARIO</h1>
     </div>
         <form action="#" th:action="@{/form}" th:object="${form}" method="post">
@@ -18,7 +21,7 @@
 <!--&lt;!&ndash;                <p typeth:if="$fields.hasErros('nombre')}" th:errors="{nombre}" class="alert alert-danger" />&ndash;&gt;-->
 <!--            </div>-->
 
-                <p>Id: <input class="form-control" type="text" th:field="*{id}" /></p>
+                <p class="col-sm-2 control-label">Id: <input class="form-control" type="text" th:field="*{id}" /></p>
                 <p>NOMBRE: <input type="text" th:field="*{name}" /></p>
                 <p>APELLIDOS: <input type="text" th:field="*{lastname}" /></p>
                 <p>TELÉFONO: <input type="text" th:field="*{phone}" /></p>
