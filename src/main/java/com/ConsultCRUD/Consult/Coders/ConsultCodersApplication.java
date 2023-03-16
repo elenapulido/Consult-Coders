@@ -1,6 +1,5 @@
 package com.ConsultCRUD.Consult.Coders;
 
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,8 @@ public class ConsultCodersApplication {
 	}
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return String.format("Hello javi!", name);
+	
+		return String.format("Hello Ibias and everybody!", name);
+
 	}
 }
-
