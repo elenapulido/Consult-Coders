@@ -1,6 +1,8 @@
 package com.ConsultCRUD.Consult.Coders.controllers;
 
+import com.ConsultCRUD.Consult.Coders.Model.CForm;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -12,7 +14,8 @@ public class HomeController {
     }
 
     @GetMapping("/form")
-    public String form() {
+    public String FormController(Model model) {
+        model.addAttribute("form", new CForm());
         return "form";
     }
 
