@@ -12,9 +12,12 @@ import java.util.Optional;
 
 @Service
 public class CConsultationService {
-    @Autowired
 
    private IRepository iRepository;
+
+    public CConsultationService(IRepository iRepository) {
+        this.iRepository = iRepository;
+    }
 
     public void createConsultation(CConsultation consultation){
         iRepository.save(consultation);
@@ -22,13 +25,12 @@ public class CConsultationService {
     }
 
     public List<CConsultation>readConsultation(){
-        List<CConsultation> consultations = new ArrayList<CConsultation>(iRepository.findAll());
+        List<CConsultation> consultations = iRepository.findAll();
         return consultations;
 
     }
-    public Optional<CConsultation> readConsultationId(Long id){
-        Optional<CConsultation> consultation = iRepository.findById(id);
-        return consultation;
+    public CConsultation readConsultationId(Long id) throws ClassNotFoundException {
+        return iRepository.findById(id).orElseThrow(()->new ClassNotFoundException("not found"));
     }
 
     public void updateConsultation(CConsultation consultation, Long id){
