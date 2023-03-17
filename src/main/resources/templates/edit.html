@@ -11,11 +11,34 @@
 <body>
 
 <img th:src="@{/assets/view-02.png}" width="100%"/>
+<div class="page-header">
+    <div>
+        <img th:src="@{/assets/view-02.png}" width="100%"/>
+    </div>
 
 
-<form>
+    <h1>FORMULARIO</h1>
+
+    <form action="#" th:action="@{/form}" th:object="${cform}" method="post">
+        <div class="form-group">
+
+            <p class="col-sm-2 control-label">Id: <input class="form-control" type="text" th:field="*{id}" /></p>
+            <p>NOMBRE: <input type="text" th:field="*{name}" /></p>
+            <p>APELLIDOS: <input type="text" th:field="*{lastname}" /></p>
+            <p>TELÉFONO: <input type="text" th:field="*{phone}" /></p>
+            <p>MAIL: <input type="email" th:field="*{email}" /></p>
+            <p>TEMA: <input type="text" th:field="*{theme}" /></p>
+
+            <div class="form-group">
+                <p>
+                    <a class="btn btn-light" th:href="@{/home}">ENVIAR</a>
+                    <a class="btn btn-light" th:href="@{/home}">BORRAR</a>
+                    <a class="btn btn-light" th:href="@{/home}">CANCELAR</a>
+                </p>
+            </div>
+
+        </div>
 
 
-</form>
 </body>
 </html>
