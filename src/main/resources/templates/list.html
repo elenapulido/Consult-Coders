@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <title>LIST</title>
+
+</head>
+<body>
+<div class="list">
+    <div class="panel-list"><h2>LISTADO DE CITAS</h2>
+    </div>
+    <table class="table table-list">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Telephone</th>
+            <th>email</th>
+            <th>Theme</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="coder: ${coder}">
+                <td data-th-text="${coder.id}"></td>
+                <td data-th-text="${coder.name}"></td>
+                <td data-th-text="${coder.lastname}"></td>
+                <td data-th-text="${coder.phone}"></td>
+                <td data-th-text="${coder.email}"></td>
+                <td data-th-text="${coder.theme}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<img th:src="@{/assets/view-02.png}" width="100%"/>
+
+
+<form>
+
+</form>
+
+</body>
+</html>
