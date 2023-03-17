@@ -3,41 +3,42 @@ package com.ConsultCRUD.Consult.Coders.Controller;
 import com.ConsultCRUD.Consult.Coders.Model.CConsultation;
 import com.ConsultCRUD.Consult.Coders.Service.CConsultationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class CController {
     @Autowired
     CConsultationService cConsultationService;
 
     @GetMapping("/consultation")
-    private List<CConsultation> readConsultation(){
+   public String List (Model model) readConsultation(){
         return cConsultationService.readConsultation();
 
     }
-    @GetMapping("/consultation/{id}")
+    @GetMapping("/read/{id}")
     private Optional<CConsultation> readConsultationId(@PathVariable("id") Long id){
        return cConsultationService.readConsultationId(id);
 
     }
 
-    @PostMapping("/consultation")
-    private void createConsultation(@RequestBody CConsultation consultation){
+    @PostMapping("/create")
+    public String createConsultation(@RequestBody CConsultation consultation){
         cConsultationService.createConsultation(consultation);
 
     }
-    @PutMapping("/consultation/{id}")
-    private void updateConsultation(@RequestBody CConsultation consultation,@PathVariable("id")Long id){
+    @PostMapping ("/edit/{id}")
+    public String updateConsultation(@RequestBody CConsultation consultation,@PathVariable("id")Long id){
         cConsultationService.updateConsultation(consultation,id);
 
     }
 
 
-    @DeleteMapping("/consultation/{id}")
-    private void deleteConsultation(@PathVariable("id")Long id){
+    @GetMapping ("/delete/{id}")
+    public String deleteConsultation(@PathVariable("id")Long id){
         cConsultationService.deleteConsultation(id);
 
 

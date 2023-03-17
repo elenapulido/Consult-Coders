@@ -19,7 +19,6 @@ public class CConsultationService {
     public void createConsultation(CConsultation consultation){
         iRepository.save(consultation);
 
-
     }
 
     public List<CConsultation>readConsultation(){
