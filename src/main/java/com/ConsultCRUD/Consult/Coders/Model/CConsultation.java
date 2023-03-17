@@ -7,25 +7,15 @@ import lombok.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @ToString
 @Table(name= "consult")
 public class CConsultation {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "id", nullable = false)
     private long id;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Column (name = "name", nullable = false)
     private String name;
@@ -39,8 +29,6 @@ public class CConsultation {
     private String theme;
     @Column (name = "date", nullable = false)
     private String date;
-
-
 
 }
 
