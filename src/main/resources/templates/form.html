@@ -16,22 +16,23 @@
 
         <h1>FORMULARIO</h1>
 
-        <form action="#" th:action="@{/form}" th:object="${cform}" method="post">
+        <form th:object="${consultation}" method="post">
         <div class="form-group">
 
-                <p class="col-sm-2 control-label">Id: <input class="form-control" type="text" th:field="*{id}" /></p>
-                <p>NOMBRE: <input type="text" th:field="*{name}" /></p>
-                <p>APELLIDOS: <input type="text" th:field="*{lastname}" /></p>
-                <p>TELÉFONO: <input type="text" th:field="*{phone}" /></p>
-                <p>MAIL: <input type="email" th:field="*{email}" /></p>
-                <p>TEMA: <input type="text" th:field="*{theme}" /></p>
+
+                <label>NOMBRE:</label> <input type="text" th:field="*{name}" />
+                <label>APELLIDOS:</label> <input type="text" th:field="*{surname}" />
+                <label>TELÉFONO: </label><input type="text" th:field="*{telephone}" />
+                <label>MAIL: </label><input type="email" th:field="*{mail}" />
+                <label>TEMA: </label> <input type="text" th:field="*{theme}" />
+                <label>FECHA: </label> <input type="text" th:field="*{date}" />
 
             <div class="form-group">
-                <p>
-                    <a class="btn btn-light" th:href="@{/home}">ENVIAR</a>
-                    <a class="btn btn-light" th:href="@{/home}">BORRAR</a>
-                    <a class="btn btn-light" th:href="@{/home}">CANCELAR</a>
-                </p>
+
+                <button type="submit" class="btn btn-light" >ENVIAR</button>
+                <button class="btn btn-light" th:href="@{/home}">BORRAR</button>
+                <button class="btn btn-light" th:href="@{/home}">CANCELAR</button>
+
             </div>
 
         </div>

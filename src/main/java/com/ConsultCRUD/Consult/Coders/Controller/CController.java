@@ -16,42 +16,50 @@ public class CController {
     CConsultationService cConsultationService;
 
     @GetMapping("/")
-   public String readConsultation(Model model){
-        model.addAttribute("consultation",cConsultationService.readConsultation() );
+    public String home(){
         return "home";
+
+    }
+
+    @GetMapping("/list")
+    public String readConsultation(Model model){
+        model.addAttribute("consultation",cConsultationService.readConsultation() );
+        return "list";
 
     }
 
     @GetMapping("/edit/{id}")
     public String readConsultationId(@PathVariable("id") Long id, Model model){
         model.addAttribute("consultation",cConsultationService.readConsultationId(id) );
-        return "home";
+        return "edit";
 
     }
     @PostMapping ("/edit/{id}")
-    public String updateConsultation(@RequestBody CConsultation consultation,@PathVariable("id")Long id){
+    public String updateConsultation(@ModelAttribute CConsultation consultation,@PathVariable("id")Long id){
         cConsultationService.updateConsultation(consultation,id);
-        return "list";
+        return "redirect:/list";
 
     }
 
-    @PostMapping("/create")
-    public String createConsultation(@RequestBody CConsultation consultation){
-        cConsultationService.createConsultation(consultation);
-        return "redirect: /";
-
-    }
     @GetMapping("/create")
-    public String createConsultationGet(@RequestBody CConsultation consultation){
-        cConsultationService.createConsultation(consultation);
+    public String createConsultationGet(Model model){
+        model.addAttribute("consultation", new CConsultation());
         return "form";
 
     }
 
+    @PostMapping("/create")
+    public String createConsultation(@ModelAttribute CConsultation consultation){
+        cConsultationService.createConsultation(consultation);
+        return "redirect:/list";
+
+    }
+
+
     @GetMapping ("/delete/{id}")
     public String deleteConsultation(@PathVariable("id")Long id){
         cConsultationService.deleteConsultation(id);
-        return "list";
+        return "redirect:/list";
 
     }
 
