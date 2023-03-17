@@ -7,8 +7,7 @@ import lombok.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @ToString
 @Table(name= "consult")
 public class CConsultation {
@@ -17,6 +16,7 @@ public class CConsultation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "id", nullable = false)
     private long id;
+
     @Column (name = "name", nullable = false)
     private String name;
     @Column (name = "surname", nullable = false)
@@ -30,5 +30,5 @@ public class CConsultation {
     @Column (name = "date", nullable = false)
     private String date;
 
-
 }
+
