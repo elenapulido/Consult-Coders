@@ -9,18 +9,15 @@
 </head>
 <body>
     <div class="page-header">
+        <div>
+            <img th:src="@{/assets/view-02.png}" width="100%"/>
+        </div>
 
-        <img th:src="@{/assets/view-01.png}" width="100%"/>
 
         <h1>FORMULARIO</h1>
-    </div>
-        <form action="#" th:action="@{/form}" th:object="${form}" method="post">
+
+        <form action="#" th:action="@{/CConsultation}" th:object="${CConsultation}" method="post">
         <div class="form-group">
-<!--            <label for="nombre" class="col-sm-2 control-label">Nombre</label>-->
-<!--            <div>-->
-<!--                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="escribir tu nombre..." required="required">-->
-<!--&lt;!&ndash;                <p typeth:if="$fields.hasErros('nombre')}" th:errors="{nombre}" class="alert alert-danger" />&ndash;&gt;-->
-<!--            </div>-->
 
                 <p class="col-sm-2 control-label">Id: <input class="form-control" type="text" th:field="*{id}" /></p>
                 <p>NOMBRE: <input type="text" th:field="*{name}" /></p>
@@ -30,13 +27,14 @@
                 <p>TEMA: <input type="text" th:field="*{theme}" /></p>
 
             <div class="form-group">
-                <p><input type="submit" value="ENVIAR" /> <input type="reset" value="BORRAR" />
-                    <input type="reset" value="CANCELAR"></p>
+                <p>
+                    <a class="btn btn-light" th:href="@{/home}">ENVIAR</a>
+                    <a class="btn btn-light" th:href="@{/home}">BORRAR</a>
+                    <a class="btn btn-light" th:href="@{/home}">CANCELAR</a>
+                </p>
             </div>
 
         </div>
-
-
 
         </form>
 

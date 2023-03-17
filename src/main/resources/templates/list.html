@@ -18,12 +18,19 @@
             <th>ID</th>
             <th>Name</th>
             <th>Surname</th>
+            <th>Telephone</th>
             <th>email</th>
+            <th>Theme</th>
         </tr>
         </thead>
         <tbody>
             <tr data-th-each="coder: ${coder}">
                 <td data-th-text="${coder.id}"></td>
+                <td data-th-text="${coder.name}"></td>
+                <td data-th-text="${coder.lastname}"></td>
+                <td data-th-text="${coder.phone}"></td>
+                <td data-th-text="${coder.email}"></td>
+                <td data-th-text="${coder.theme}"></td>
             </tr>
         </tbody>
     </table>
