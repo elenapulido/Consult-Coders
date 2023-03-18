@@ -12,7 +12,7 @@
 ## 1. Description
 This is a project developed by Team Consult-Codes.
 
-A website created for students who need to consult their teachers at any time and through a secure and easy-to-use platform.
+A website created for users who need to consult to web developer at any time and through a secure and easy-to-use platform.
 
 This website, it is to generate queries about any program or programming language. This consultation is attended by a web developer who will help by facilitating an appointment, in which you can resolve doubts or queries.
 
