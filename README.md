@@ -22,6 +22,7 @@ This website, it is to generate queries about any program or programming languag
 
 ## 3. User stories
 <ul>
+<li>A homepage where you have two buttons to access the form and the existing list of appointments.</li>  
 <li>A page with a form to create a new appointment.</li>
 <li>A page to view the list with all scheduled appointments.</li>
 <li>A page to edit a specific appointment.</li>
