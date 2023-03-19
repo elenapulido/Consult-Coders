@@ -9,11 +9,11 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @ToString
-@Table(name= "consult")
+@Table(name= "coders")
 public class CConsultation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id", nullable = false)
     private Long id;
 
@@ -23,11 +23,11 @@ public class CConsultation {
     private String surname;
     @Column (name = "phone", nullable = false)
     private int phone;
-    @Column (name = "mail", nullable = false)
-    private String mail;
+    @Column (name = "email", nullable = false)
+    private String email;
     @Column (name = "theme", nullable = false)
     private String theme;
-    @Column (name = "date", nullable = false)
+    @Column (name = "date", nullable = true)
     private String date;
 
 }
