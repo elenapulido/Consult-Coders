@@ -13,10 +13,11 @@
     <link th:href="@{/css/main.css}" rel="stylesheet"/>
 </head>
 <body class="list">
+
 <div class="container">
 
     <table class="d-flex flex-row-reverse">
-        <tr th:each="consultation : ${consultations}">
+            <tr th:each="consultation : ${consultations}">
             <td th:text="${consultation.id}">1</td>
             <td th:text="${consultation.name}">Text ...</td>
             <td th:text="${consultation.surname}">Text ...</td>
