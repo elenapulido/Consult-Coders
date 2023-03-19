@@ -63,7 +63,7 @@ public class CController {
         return "list";
     }
 
-    // Hasta aquí atrás he conseguido ejecutar bien, aún falta que además de llevar los datos a la bbdd también los guarde yobviamente la parte de editar y eliminar.
+    // Hasta aquí atrás he conseguido ejecutar bien, aún falta la parte de editar y eliminar.
 
 
     @PostMapping("/edit/{id}")
