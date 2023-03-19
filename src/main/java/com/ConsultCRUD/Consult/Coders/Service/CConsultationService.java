@@ -14,7 +14,7 @@ import java.util.Optional;
 public class CConsultationService {
     @Autowired
 
-   private IRepository iRepository;
+    private IRepository iRepository;
 
     public void createConsultation(CConsultation consultation){
         iRepository.save(consultation);
