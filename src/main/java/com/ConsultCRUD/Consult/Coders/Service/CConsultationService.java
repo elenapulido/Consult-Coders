@@ -21,14 +21,16 @@ public class CConsultationService {
 
     public void createConsultation(CConsultation consultation){
         iRepository.save(consultation);
-
     }
 
-    public List<CConsultation>readConsultation(){
+
+    public List<CConsultation>getAll(){
         List<CConsultation> consultations = iRepository.findAll();
         return consultations;
-
     }
+
+    // Hasta aquí atrás he conseguido ejecutar bien, aún falta que además de llevar los datos a la bbdd también los guarde yobviamente la parte de editar y eliminar.
+
     public CConsultation readConsultationId(Long id) throws ClassNotFoundException {
         return iRepository.findById(id).orElseThrow(()->new ClassNotFoundException("not found"));
     }
