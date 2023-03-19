@@ -14,12 +14,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping
 public class CController {
     @Autowired
     CConsultationService cConsultationService;
 
     @GetMapping("/home")
+
     public String home(Model model) {
         cConsultationService.getAll();
         return "index";
@@ -27,9 +27,18 @@ public class CController {
 
     @GetMapping("/form")
     public String showForm(Model model) {
+
+    public String List (Model model) {
+        cConsultationService.readConsultation();
+        return "home";
+    }
+
+    @GetMapping("/form")
+    public String FormController(Model model) {
         model.addAttribute("consultation", new CConsultation());
         return "form";
     }
+
 
     @PostMapping("/create")
     public String createConsultation(@ModelAttribute CConsultation consultation, Model model) {
@@ -71,6 +80,5 @@ public class CController {
         cConsultationService.deleteConsultation(id);
         return "home";
     }
-
 
 }
