@@ -9,7 +9,7 @@
 5. [Stacks](#stacks)
 6. [Goals](#goals)
 
-## 1. Description](https://us04web.zoom.us/j/74793672849?pwd=JbrA9mqxrcfEUuN0uZevQokimh40sg.1)
+## 1. Description
 This is a project developed by Team Consult-Codes.
 
 A website created for users who need to consult to web developers at any time and through a secure and easy-to-use platform.
