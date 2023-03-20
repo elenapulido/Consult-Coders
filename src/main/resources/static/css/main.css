@@ -1,7 +1,25 @@
 
 body {
-    background-color: black;
+    background-image: url("/assets/view-01.png");
+    background-size: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
+    color: white;
+}
+
+.list {
+    background-image: url("/assets/view-02.png");
+    background-size: 100%;
+    color: white;
+    padding-top: 15vh;
+    text-align: right;
+}
+
+.form {
+    background-image: url("/assets/view-02.png");
+    background-size: 100%;
+    color: white;
+    padding-top: 15vh;
+    text-align: right;
 }
