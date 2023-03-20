@@ -1,42 +1,50 @@
 
-/*
-body {
-    background-color: black;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-   }
 
-  body {
-      background-image:url();
-       background-position: center center;
-       background-repeat: no-repeat;
-       background-attachment: fixed;
-       background-size: cover;
-
-   }
-*/
-body {
+.home {
     background-image: url("/assets/view-01.png");
-     background-color: black;
-    background-size: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+
+
+
+
 }
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-end;
+    margin-top: 50%;
+}
+
+
 
 .list {
     background-image: url("/assets/view-02.png");
-    background-size: 100%;
+    background-size: 70%;
+    background-color: black;
+    background-repeat: no-repeat;
     color: white;
     padding-top: 15vh;
     text-align: right;
 }
+tr{
+    color: white
+}
+input{
+border-radius: 1vh;
+}
 
 .form {
     background-image: url("/assets/view-02.png");
-    background-size: 100%;
+    background-size: 70%;
+    background-color: black;
+    background-repeat: no-repeat;
     color: white;
     padding-top: 15vh;
     text-align: right;
@@ -44,7 +52,9 @@ body {
 
 .edit {
     background-image: url("/assets/view-02.png");
-    background-size: 100%;
+    background-size: 70%;
+    background-color: black;
+    background-repeat: no-repeat;
     color: white;
     padding-top: 15vh;
     text-align: right;
