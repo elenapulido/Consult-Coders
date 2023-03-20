@@ -12,23 +12,27 @@ import java.util.Optional;
 
 @Service
 public class CConsultationService {
-    @Autowired
 
-   private IRepository iRepository;
+    private IRepository iRepository;
+
+    public CConsultationService(IRepository iRepository) {
+        this.iRepository = iRepository;
+    }
 
     public void createConsultation(CConsultation consultation){
         iRepository.save(consultation);
+    }  // OK
 
-    }
 
-    public List<CConsultation>readConsultation(){
-        List<CConsultation> consultations = new ArrayList<CConsultation>(iRepository.findAll());
+    public List<CConsultation>getAll(){
+        List<CConsultation> consultations = iRepository.findAll();
         return consultations;
+    }  // List of all people
 
-    }
-    public Optional<CConsultation> readConsultationId(Long id){
-        Optional<CConsultation> consultation = iRepository.findById(id);
-        return consultation;
+    // Hasta aquí atrás he conseguido ejecutar bien, aún falta que además de llevar los datos a la bbdd también los guarde yobviamente la parte de editar y eliminar.
+
+    public CConsultation readConsultationId(Long id) throws ClassNotFoundException {
+        return iRepository.findById(id).orElseThrow(()->new ClassNotFoundException("not found"));
     }
 
     public void updateConsultation(CConsultation consultation, Long id){
