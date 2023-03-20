@@ -4,15 +4,11 @@ import org.springframework.ui.Model;
 import com.ConsultCRUD.Consult.Coders.Model.CConsultation;
 import com.ConsultCRUD.Consult.Coders.Service.CConsultationService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
-
+import java.util.Optional;
 
 @Controller
 public class CController {
@@ -20,54 +16,51 @@ public class CController {
     CConsultationService cConsultationService;
 
     @GetMapping("/")
-   public String readConsultation(Model model) {
-        model.addAttribute("consultation", cConsultationService.readConsultation());
+    public String home(){
         return "home";
+
+    }
+
+    @GetMapping("/list")
+    public String readConsultation(Model model){
+        model.addAttribute("consultation",cConsultationService.readConsultation() );
+        return "list";
+
     }
 
     @GetMapping("/edit/{id}")
     public String readConsultationId(@PathVariable("id") Long id, Model model){
         model.addAttribute("consultation",cConsultationService.readConsultationId(id) );
-        return "home";
+        return "edit";
 
     }
-
     @PostMapping ("/edit/{id}")
-    public String updateConsultation(@RequestBody CConsultation consultation,@PathVariable("id")Long id){
-            cConsultationService.updateConsultation(consultation, id);
-            return "list";
-        }
+    public String updateConsultation(@ModelAttribute CConsultation consultation,@PathVariable("id")Long id){
+        cConsultationService.updateConsultation(consultation,id);
+        return "redirect:/list";
 
-    @GetMapping("/form")
-    public String showForm(Model model) {
-        cConsultationService.readConsultation();
-        return "home";
     }
 
+    @GetMapping("/create")
+    public String createConsultationGet(Model model){
+        model.addAttribute("consultation", new CConsultation());
+        return "form";
+
+    }
 
     @PostMapping("/create")
-    public String createConsultation(@ModelAttribute CConsultation consultation, Model model){
-                cConsultationService.createConsultation(consultation);
-                return "redirect:/list";
+    public String createConsultation(@ModelAttribute CConsultation consultation){
+        cConsultationService.createConsultation(consultation);
+        return "redirect:/list";
+
     }
 
 
-    @GetMapping("/read/{id}")
-    private ResponseEntity<CConsultation> readConsultationId(@PathVariable("id") Long id) {
-        try {
-            CConsultation consultation = cConsultationService.readConsultationId(id);
-            return ResponseEntity.status(200).body(consultation);
-        } catch (Exception ex) {
-            return null;
-        }
-    }
+    @GetMapping ("/delete/{id}")
+    public String deleteConsultation(@PathVariable("id")Long id){
+        cConsultationService.deleteConsultation(id);
+        return "redirect:/list";
 
-
-    @GetMapping("/list")
-    public String showList(Model model) {
-        List<CConsultation> consultations = cConsultationService.getAll();
-        model.addAttribute("consultations", consultations);
-        return "list";
     }
 
 }
