@@ -52,6 +52,14 @@
 			<version>1.18.26</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+=======
+
+>>>>>>> 881eb150c4aae8edd4afd0c92c71d56b46db4b04
 	</dependencies>
 
 	<build>

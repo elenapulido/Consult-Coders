@@ -1,82 +1,66 @@
 package com.ConsultCRUD.Consult.Coders.Controller;
 
+import org.springframework.ui.Model;
 import com.ConsultCRUD.Consult.Coders.Model.CConsultation;
 import com.ConsultCRUD.Consult.Coders.Service.CConsultationService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
-
+import java.util.Optional;
 
 @Controller
 public class CController {
     @Autowired
     CConsultationService cConsultationService;
 
-    @GetMapping("/home")
-
-    public String home(Model model) {
-        cConsultationService.getAll();
-        return "index";
-    }
-
-    @GetMapping("/form")
-    public String showForm(Model model) {
-        cConsultationService.readConsultation();
+    @GetMapping("/")
+    public String home(){
         return "home";
-    }
 
-    @GetMapping("/form")
-    public String FormController(Model model) {
-        model.addAttribute("consultation", new CConsultation());
-        return "form";
-    } // OK
-
-
-    @PostMapping("/create")
-    public String createConsultation(@ModelAttribute CConsultation consultation, Model model) {
-        cConsultationService.createConsultation(consultation);
-        return "redirect:/list";
-    }  // OK
-
-    @GetMapping("/read/{id}")
-    private ResponseEntity<CConsultation> readConsultationId(@PathVariable("id") Long id) {
-        try {
-            CConsultation consultation = cConsultationService.readConsultationId(id);
-            return ResponseEntity.status(200).body(consultation);
-        } catch (Exception ex) {
-            return null;
-        }
     }
 
     @GetMapping("/list")
-    public String showList(Model model) {
-        List<CConsultation> consultations = cConsultationService.getAll();
-        model.addAttribute("consultations", consultations);
+    public String readConsultation(Model model){
+        model.addAttribute("consultation",cConsultationService.readConsultation() );
         return "list";
+
     }
 
-    // Hasta aquí atrás he conseguido ejecutar bien, aún falta que además de llevar los datos a la bbdd también los guarde yobviamente la parte de editar y eliminar.
+    @GetMapping("/edit/{id}")
+    public String readConsultationId(@PathVariable("id") Long id, Model model){
+        model.addAttribute("consultation",cConsultationService.readConsultationId(id) );
+        return "edit";
 
+    }
+    @PostMapping ("/edit/{id}")
+    public String updateConsultation(@ModelAttribute CConsultation consultation,@PathVariable("id")Long id){
+        cConsultationService.updateConsultation(consultation,id);
+        return "redirect:/list";
 
-    @PostMapping("/edit/{id}")
-    public String updateConsultation(@RequestBody CConsultation consultation, @PathVariable("id") Long id) {
-        cConsultationService.updateConsultation(consultation, id);
-        return "list";
+    }
+
+    @GetMapping("/create")
+    public String createConsultationGet(Model model){
+        model.addAttribute("consultation", new CConsultation());
+        return "form";
+
+    }
+
+    @PostMapping("/create")
+    public String createConsultation(@ModelAttribute CConsultation consultation){
+        cConsultationService.createConsultation(consultation);
+        return "redirect:/list";
+
     }
 
 
-
-
-    @GetMapping("/delete/{id}")
-    public String deleteConsultation(@PathVariable("id") Long id) {
+    @GetMapping ("/delete/{id}")
+    public String deleteConsultation(@PathVariable("id")Long id){
         cConsultationService.deleteConsultation(id);
-        return "home";
+        return "redirect:/list";
+
     }
 
 }
