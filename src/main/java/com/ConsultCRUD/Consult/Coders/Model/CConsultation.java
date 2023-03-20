@@ -37,7 +37,7 @@ public class CConsultation {
     private String mail;
     @Column (name = "theme", nullable = false)
     private String theme;
-    @Column (name = "date", nullable = false)
+    @Column (name = "date", nullable = true)
     private String date;
 
 
