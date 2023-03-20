@@ -23,7 +23,7 @@ public class CController {
 
     @GetMapping("/list")
     public String readConsultation(Model model){
-        model.addAttribute("consultation",cConsultationService.readConsultation() );
+        model.addAttribute("consultation",cConsultationService.readConsultationId() );
         return "list";
 
     }
