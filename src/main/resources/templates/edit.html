@@ -5,17 +5,33 @@
 <head>
     <meta charset="UTF-8">
     <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>EDIT</title>
 
 </head>
-<body>
-
-<img th:src="@{/assets/view-02.png}" width="100%"/>
-
-
-<form>
+<body class="edit">
+<div class="page-header">
 
 
-</form>
+
+    <form th:object="${consultation}" method="post">
+        <div class="form-group">
+            <h1 class="tittle-edit">EDITAR CITA</h1>
+                <p>NOMBRE: <input type="text" th:field="*{name}" /></p>
+                <p>APELLIDOS: <input type="text" th:field="*{surname}" /></p>
+                <p>TELÉFONO: <input type="text" th:field="*{telephone}" /></p>
+                <p>MAIL: <input type="email" th:field="*{mail}" /></p>
+                <p>TEMA: <input type="text" th:field="*{theme}" /></p>
+                <p>DATE: <input type="text" th:field="*{date}" /></p>
+
+                <p>
+                    <button type="submit" class="btn btn-light">ACTUALIZAR</button>
+                    <a class="btn btn-light" th:href="@{/}">CANCELAR</a>
+                </p>
+        </div>
+
+
+
 </body>
 </html>
