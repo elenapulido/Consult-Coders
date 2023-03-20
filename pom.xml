@@ -29,7 +29,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
@@ -49,16 +48,10 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-<<<<<<< HEADg
 			<version>1.18.26</version>
 			<scope>provided</scope>
 		</dependency>
-
-=======
-		</dependency>
->>>>>>> 26b84b9158a027027ca2bbe9470b34599e3e57e1
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
