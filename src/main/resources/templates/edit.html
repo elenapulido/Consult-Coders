@@ -10,17 +10,14 @@
     <title>EDIT</title>
 
 </head>
-<body>
-
-<img th:src="@{/assets/view-02.png}" width="100%"/>
+<body class="edit">
 <div class="page-header">
 
-    <h1>FORMULARIO</h1>
+
 
     <form th:object="${consultation}" method="post">
         <div class="form-group">
-
-
+            <h1 class="tittle-edit">EDITAR CITA</h1>
             <p>NOMBRE: <input type="text" th:field="*{name}" /></p>
             <p>APELLIDOS: <input type="text" th:field="*{surname}" /></p>
             <p>TELÉFONO: <input type="text" th:field="*{telephone}" /></p>
@@ -28,14 +25,12 @@
             <p>TEMA: <input type="text" th:field="*{theme}" /></p>
             <p>DATE: <input type="text" th:field="*{date}" /></p>
 
-            <div class="form-group">
-                <p>
-                    <button type="submit" class="btn btn-light">ACTUALIZAR</button>
-                    <a class="btn btn-light" th:href="@{/list}">CANCELAR</a>
-                </p>
-            </div>
-
+            <p>
+                <button type="submit" class="btn btn-light">ACTUALIZAR</button>
+                <a class="btn btn-light" th:href="@{/}">CANCELAR</a>
+            </p>
         </div>
+
 
 
 </body>
