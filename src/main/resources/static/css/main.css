@@ -1,4 +1,5 @@
 
+/*
 body {
     background-color: black;
     text-align: center;
@@ -6,4 +7,45 @@ body {
     align-items: center;
    }
 
-   p
+  body {
+      background-image:url();
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-size: cover;
+
+   }
+*/
+body {
+    background-image: url("/assets/view-01.png");
+     background-color: black;
+    background-size: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.list {
+    background-image: url("/assets/view-02.png");
+    background-size: 100%;
+    color: white;
+    padding-top: 15vh;
+    text-align: right;
+}
+
+.form {
+    background-image: url("/assets/view-02.png");
+    background-size: 100%;
+    color: white;
+    padding-top: 15vh;
+    text-align: right;
+}
+
+.edit {
+    background-image: url("/assets/view-02.png");
+    background-size: 100%;
+    color: white;
+    padding-top: 15vh;
+    text-align: right;
+}

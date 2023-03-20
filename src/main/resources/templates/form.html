@@ -3,20 +3,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Formulario</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body>
+<body class="form">
     <div class="page-header">
-        <div>
-            <img th:src="@{/assets/view-02.png}" width="100%"/>
-        </div>
 
 
-        <h1>FORMULARIO</h1>
+
+
 
         <form th:object="${consultation}" method="post">
+            <h1>FORMULARIO</h1>
         <div class="form-group">
 
 
@@ -28,10 +28,11 @@
                 <label>FECHA: </label> <input type="text" th:field="*{date}" />
 
             <div class="form-group">
-
-                <button type="submit" class="btn btn-light" >ENVIAR</button>
-                <button class="btn btn-light" th:href="@{/home}">BORRAR</button>
-                <button class="btn btn-light" th:href="@{/home}">CANCELAR</button>
+                <p>
+                    <button type="submit" class="btn btn-light" >ENVIAR</button>
+                    <button class="btn btn-light" type="reset">BORRAR</button>
+                    <a class="btn btn-light" th:href="@{/}">CANCELAR</a>
+                </p>
 
             </div>
 
