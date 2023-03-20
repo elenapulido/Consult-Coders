@@ -1,42 +1,45 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Formulario</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>consultCODERS.Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
 </head>
-<body>
-<div class="page-header">
-    <div>
-        <img th:src="@{/assets/view-02.png}" width="100%"/>
-    </div>
 
+<body class="form">
 
-    <h1>FORMULARIO</h1>
+<div class="container">
 
-    <form th:object="${consultation}" method="post">
-        <div class="form-group">
+    <form action="#" th:action="@{/create}" th:object="${consultation}" method="post">
 
+        <h1>FORMULARIO</h1>
 
-            <label>NOMBRE:</label> <input type="text" th:field="*{name}" />
-            <label>APELLIDOS:</label> <input type="text" th:field="*{surname}" />
-            <label>TELÉFONO: </label><input type="text" th:field="*{telephone}" />
-            <label>MAIL: </label><input type="email" th:field="*{mail}" />
-            <label>TEMA: </label> <input type="text" th:field="*{theme}" />
-            <label>FECHA: </label> <input type="text" th:field="*{date}" />
+        <div>
+            <p>NOMBRE: <input type="text"
+                              id="name"
+                              th:field="*{name}"/></p>
+            <p>APELLIDOS: <input type="text" th:field="*{surname}"/></p>
+            <p>TELÉFONO: <input type="text" th:field="*{phone}"/></p>
+            <p>MAIL: <input type="email" th:field="*{email}"/></p>
+            <p>FECHA: <input type="text" th:field="*{date}"/></p>
+            <p>TEMA: <input type="text" th:field="*{theme}"/></p>
 
             <div class="form-group">
-
-                <button type="submit" class="btn btn-light" >ENVIAR</button>
-                <button class="btn btn-light" th:href="@{/home}">BORRAR</button>
-                <button class="btn btn-light" th:href="@{/home}">CANCELAR</button>
-
+                <p>
+                    <input class="btn btn-success btn-sm" type="submit" value="ENVIAR" />
+                    <input class="btn btn-success btn-sm" type="reset" value="BORRAR"/>
+                    <a class="btn btn-danger btn-sm" th:href="@{/home}" href="templates/home.html">CANCELAR</a>
+                </p>
             </div>
-
         </div>
-
-    </form>
+</div>
+</form>
 
 </body>
 </html>
