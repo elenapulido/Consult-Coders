@@ -10,9 +10,6 @@
     background-attachment: fixed;
     display: flex;
 
-
-
-
 }
 .container{
     display: flex;
@@ -22,27 +19,50 @@
     margin-top: 50%;
 }
 
-
-
 .list {
     background-image: url("/assets/view-02.png");
-    background-size: 70%;
+    background-size: 80%;
     background-color: black;
     background-repeat: no-repeat;
     color: white;
-    padding-top: 15vh;
-    text-align: right;
+    padding-top: 25vh;
+
+
 }
+.tittle-list{
+    font-size: 5em;
+}
+
+.panel-list{
+    display: flex;
+    flex-direction: column;
+    padding-left:40%;
+
+}
+.button-list{
+    padding-left: 90.3%;
+    padding-top: 0.5%;
+
+}
+
+table{
+    width:100%;
+
+}
+
 tr{
     color: white
 }
+
 input{
-border-radius: 1vh;
+    border-radius: 1vh;
+    width: 30%;
+    height: 120%;
 }
 
 .form {
     background-image: url("/assets/view-02.png");
-    background-size: 70%;
+    background-size: 80%;
     background-color: black;
     background-repeat: no-repeat;
     color: white;
@@ -50,9 +70,25 @@ border-radius: 1vh;
     text-align: right;
 }
 
+.tittle-form{
+    font-size: 5em;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    margin-right: 20%;
+    margin-top: 5%;
+}
+
+.tittle-edit{
+    font-size: 5em;
+}
+
 .edit {
     background-image: url("/assets/view-02.png");
-    background-size: 70%;
+    background-size: 80%;
     background-color: black;
     background-repeat: no-repeat;
     color: white;

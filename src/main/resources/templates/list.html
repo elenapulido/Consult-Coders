@@ -11,21 +11,22 @@
 </head>
 
 <body class="list">
-<div>
-    <div class="panel-list"><h2>LISTADO DE CITAS</h2>
-    </div>
-    <table class="table table-list">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Telephone</th>
-            <th>Email</th>
-            <th>Theme</th>
-            <th>Date</th>
-        </tr>
-        </thead>
-        <tbody class="">
+
+    <div class="panel-list">
+
+        <table class="table-list">
+            <thead>
+                <h1 class="tittle-list">LISTADO DE CITAS</h1>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>Theme</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+        <tbody>
             <tr data-th-each="coder: ${consultation}">
                 <td data-th-text="${coder.name}"></td>
                 <td data-th-text="${coder.surname}"></td>
@@ -40,8 +41,12 @@
             </tr>
         </tbody>
     </table>
-    <a class="btn btn-light" th:href="@{/}">VOLVER</a>
+
 </div>
+    <div class="button-list">
+        <a class="btn btn-light" th:href="@{/}">VOLVER</a>
+    </div>
+
 
 
 
